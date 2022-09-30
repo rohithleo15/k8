@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: login_page1
+  name: loginpage1
 spec:
   replicas: 1
   selector:     
@@ -20,7 +20,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: login_page1
+  name: loginpage1
 spec:
   ports:
     - port: 80
