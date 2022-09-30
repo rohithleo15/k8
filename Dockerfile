@@ -1,2 +1,3 @@
-FROM nginx
-COPY nginx.conf /etc/nginx/nginx.conf
+FROM hshar/webapp
+RUN rm /var/www/html/*
+ADD ./index.html /var/www/html
