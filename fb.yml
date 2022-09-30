@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login_page
+spec:
+  replicas: 1
+  selector:     
+    matchLabels:
+     app: myos
+  template:
+    metadata:
+      labels:
+        app: myos
+    spec:
+      containers:
+      - name: login
+        image: rohithleo15/login_page
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login_page
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: NodePort
+  selector:
+      app: myos
